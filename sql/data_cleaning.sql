@@ -139,7 +139,7 @@ SELECT `company`,
 	FROM 
 		world_layoffs.layoffs_staging;
 
--- Now we can delete the rows where row_num is greater than 2.
+-- we can delete the rows where row_num is greater than 2.
 
 DELETE FROM world_layoffs.layoffs_staging2
 WHERE row_num >= 2;
@@ -205,7 +205,7 @@ ORDER BY industry;
 
 -- ---------------------------------------------------
 
--- I noticed “Crypto” has several variations — we’ll standardize them all to Crypto.
+-- I noticed 'Crypto' has several variations — we’ll standardize them all to Crypto.
 SELECT DISTINCT industry
 FROM world_layoffs.layoffs_staging2
 ORDER BY industry;
@@ -220,8 +220,6 @@ FROM world_layoffs.layoffs_staging2
 ORDER BY industry;
 
 -- --------------------------------------------------
--- we also need to look at 
-
 SELECT *
 FROM world_layoffs.layoffs_staging2;
 
@@ -249,7 +247,6 @@ SET `date` = STR_TO_DATE(`date`, '%m/%d/%Y');
 -- now we can convert the data type properly
 ALTER TABLE layoffs_staging2
 MODIFY COLUMN `date` DATE;
-
 
 SELECT *
 FROM world_layoffs.layoffs_staging2;
