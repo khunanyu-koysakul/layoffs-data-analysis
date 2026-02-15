@@ -1,3 +1,5 @@
+-- Expkoratory Data
+
 -- Preview the cleaned dataset to understand available columns and data structure.
 SELECT *
 FROM world_layoffs.layoffs_staging2;
